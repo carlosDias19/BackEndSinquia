@@ -11,7 +11,6 @@ namespace DDD.Infra.SQLite
         {
             optionsBuilder.UseSqlite(@"Data Source=SinquiaDB.db");
         }
-        public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Estado> Estado { get; set; }
         public DbSet<PontoTuristico> PontoTuristico { get; set; }
 

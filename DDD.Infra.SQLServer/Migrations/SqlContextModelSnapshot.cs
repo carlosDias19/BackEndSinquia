@@ -46,14 +46,7 @@ namespace DDD.Infra.SQLServer.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Bairro")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("CEP")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Complemento")
-                        .IsRequired()
+                    b.Property<string>("Cidade")
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("DataInclusao")
@@ -62,47 +55,19 @@ namespace DDD.Infra.SQLServer.Migrations
                     b.Property<string>("Descricao")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Endereco")
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("Nome")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Numero")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Referencia")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("UF")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
                     b.ToTable("PontoTuristico");
-                });
-
-            modelBuilder.Entity("DDD.Domain.SinquiaContext.Usuario", b =>
-                {
-                    b.Property<int>("UsuarioId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<bool>("Ativo")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("DataCriacao")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("Nivel")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("NomeCompleto")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Senha")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("UsuarioId");
-
-                    b.ToTable("Usuario");
                 });
 #pragma warning restore 612, 618
         }

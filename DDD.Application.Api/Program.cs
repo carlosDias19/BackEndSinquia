@@ -45,19 +45,16 @@ builder.Services.AddAuthentication(x =>
 
 //IOC - Dependency Injection
 //builder.Services.AddScoped<IAlunoRepository, AlunoRepository>();
-builder.Services.AddScoped<IUsuarioRepository, UsuarioRepositorySqlServer>();
 builder.Services.AddScoped<IEstadoRepository, EstadoRepositorySqlServer>();
 builder.Services.AddScoped<IPontoTuristicoRepository, PontoTuristicoRepositorySqlServer>();
 
 //Dependency Injection Application
 builder.Services.AddScoped<IEstadoApplication, EstadoApplication>();
-builder.Services.AddScoped<IUsuarioApplication, UsuarioApplication>();
 builder.Services.AddScoped<IPontoTuristicoApplication, PontoTuristicoApplication>();
 
 
 //Dependency Injection Service
 builder.Services.AddScoped<IEstadoService, EstadoService>();
-builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 builder.Services.AddScoped<IPontoTuristicoService, PontoTuristicoService>();
 
 

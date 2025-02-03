@@ -34,35 +34,15 @@ namespace DDD.Infra.SQLServer.Migrations
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Nome = table.Column<string>(type: "TEXT", nullable: true),
+                    UF = table.Column<string>(type: "TEXT", nullable: true),
+                    Cidade = table.Column<string>(type: "TEXT", nullable: true),
+                    Referencia = table.Column<string>(type: "TEXT", nullable: false),
                     Descricao = table.Column<string>(type: "TEXT", nullable: true),
-                    CEP = table.Column<int>(type: "INTEGER", nullable: false),
-                    Endereco = table.Column<string>(type: "TEXT", nullable: true),
-                    Numero = table.Column<int>(type: "INTEGER", nullable: false),
-                    Bairro = table.Column<string>(type: "TEXT", nullable: true),
-                    Complemento = table.Column<string>(type: "TEXT", nullable: false),
                     DataInclusao = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_PontoTuristico", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Usuario",
-                columns: table => new
-                {
-                    UsuarioId = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Nivel = table.Column<int>(type: "INTEGER", nullable: false),
-                    DataCriacao = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    Email = table.Column<string>(type: "TEXT", nullable: true),
-                    Senha = table.Column<string>(type: "TEXT", nullable: true),
-                    NomeCompleto = table.Column<string>(type: "TEXT", nullable: true),
-                    Ativo = table.Column<bool>(type: "INTEGER", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Usuario", x => x.UsuarioId);
                 });
         }
 
@@ -74,9 +54,6 @@ namespace DDD.Infra.SQLServer.Migrations
 
             migrationBuilder.DropTable(
                 name: "PontoTuristico");
-
-            migrationBuilder.DropTable(
-                name: "Usuario");
         }
     }
 }
